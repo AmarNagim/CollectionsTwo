@@ -10,16 +10,17 @@ Typ hier de artikelen voor uw boodschappenlijstje
 
 groceryList = []
 
-item = input('Typ hier een product in: ')
-groceryList.append(item)
-again = input('Wil je nog een product toevoegen? J/N: ').lower()
-while again == 'j':
-    item = input('Typ hier een product in: ')
-    groceryList.append(item)
-    again = input('Wil je nog een product toevoegen? J/N: ').lower()
-while again not in ['j', 'n']:
-    print('\nSorry, ik heb u niet begrepen')
-    again = input('Wil je nog een product toevoegen? J/N: ').lower()
+again = 'j'
+while again != 'n':
+        item = input('Typ hier een product in: ')
+        groceryList.append(item)
+        again = input('Wil je nog een product toevoegen? J/N: ').lower()
+        while again != 'j' and again != 'n':
+                print('Sorry, dit begreep ik niet..')
+                again = input('Wil je nog een product toevoegen? J/N: ').lower()
+                        
+
+
     
 
 result = dict((i, groceryList.count(i)) for i in groceryList)
